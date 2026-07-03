@@ -1,0 +1,6 @@
+.DS_Store
+.idea/
+node_modules/
+
+# clé privée de signature de l'extension — NE JAMAIS committer
+*.pem

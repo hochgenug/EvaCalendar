@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArpwrExqY2kBFc5/2WfW5gOw5e3WgUV4RNpDOWpkw2OE6jJdJH4zdgyLQ/WQ18NxBBfUhRRwFaW9A1Ikcx2GlN1kBjkLZKw/y73qU9fVkgdd6i5bIyVOpkA0QGURe44/olhY6yn+WHuM+Pz7UokiGm4s1ksEw15jcEij0m+QqXy4VfTlXU4NbTfxRsAILNnbXnkIJRFwKYmSPmos1rN8WM01XEx+Wjs2Ah7DzoB33aDkAytcxNybSMWqgZMDWl5bO31dOEtHHEmaaFfhCgkIPTnMKscUzKxCgS76hx0b07HPUGKQdGeo2HFkFsA0twoTFWjy8sLiofIZqMM+9k5/riQIDAQAB",
+  "name": "EVA → Google Calendar",
+  "version": "1.0.0",
+  "description": "Synchronise automatiquement tes sessions EVA (eva.gg) dans Google Calendar.",
+  "permissions": ["alarms", "storage", "notifications", "identity", "tabs", "scripting"],
+  "host_permissions": ["https://app.eva.gg/*", "https://api.eva.gg/*", "https://www.googleapis.com/*"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "content_scripts": [
+    {
+      "matches": ["https://app.eva.gg/*"],
+      "js": ["capture.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ],
+  "action": { "default_popup": "popup.html", "default_title": "EVA Sync" },
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+}

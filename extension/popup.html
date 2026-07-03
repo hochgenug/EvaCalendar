@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body { font: 13px -apple-system, system-ui, sans-serif; width: 300px; margin: 0; padding: 14px; color: #1a1a1a; }
+      h1 { font-size: 14px; margin: 0 0 4px; }
+      p.sub { color: #666; font-size: 12px; margin: 0 0 12px; }
+      button { margin-top: 8px; width: 100%; padding: 9px; border: 0; border-radius: 6px; background: #3b6ef5; color: #fff; font-weight: 600; cursor: pointer; }
+      button.secondary { background: #eef1f6; color: #1a1a1a; }
+      .opt { display: flex; gap: 8px; align-items: flex-start; margin-top: 12px; font-size: 12px; cursor: pointer; }
+      .opt input { margin-top: 2px; }
+      .opt em { color: #666; font-style: normal; }
+      .status { margin-top: 12px; padding: 8px; border-radius: 6px; background: #f5f7fa; font-size: 12px; }
+      .status.ok { background: #e7f6ec; }
+      .status.err { background: #fdecec; }
+    </style>
+  </head>
+  <body>
+    <h1>EVA → Google Calendar</h1>
+    <p class="sub">Sync tes sessions EVA dans ton agenda « EVA ».</p>
+
+    <button id="connect">Connecter Google</button>
+    <button id="sync" class="secondary">Synchroniser maintenant</button>
+
+    <label class="opt">
+      <input type="checkbox" id="syncPlayers" />
+      <span>Afficher la liste des joueurs sur chaque séance.<br />
+        <em>Ouvre brièvement un onglet EVA en arrière-plan à chaque synchro pour les récupérer.</em></span>
+    </label>
+
+    <div class="status" id="status">Statut : —</div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
